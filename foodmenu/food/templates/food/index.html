@@ -24,8 +24,9 @@
                 </div>
                 <div class="col-md-2 offset-md-1" style="text-align:end; margin-top:9px;">
                     <p><a href="{% url 'food:detail' item.id %}" class="btn btn-info">Details</a></p>
-                    <p><a href="{% url 'food:detail' item.id %}" class="btn btn-primary">Update</a></p>
-                    </p><a href="{% url 'food:detail' item.id %}" class="btn btn-danger">Delete</a></p>
+                    <p><a href="{% url 'food:update_item' item.id %}" class="btn btn-primary">Update</a></p>
+                    <p><a href="{% url 'food:delete_item' item.id %}" class="btn btn-danger">Delete</a></p>
+                
                 </div>
             </div>
         </div>
