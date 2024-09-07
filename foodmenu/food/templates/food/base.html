@@ -16,9 +16,20 @@
         <div class="navbar">
             <a class="nav-item nav-link" href="/food/add">Add Item</a>
             <a class="nav-item nav-link" href="/food/index">View Item</a>
+            {% if user.is_authenticated %}
+                <form method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">
+                        Logout
+                    </button>
+                </form>
+            {% else %}
+                  <a href = "{% url 'login' %}">Login</a>
+            {% endif %}
+
         </div>
     </nav>
-
+    
     {% block body %}
     {% endblock %}
 </body>
